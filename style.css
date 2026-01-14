@@ -21,6 +21,11 @@ a {
   background-color: #2f2f2f;
   border-color: #2f2f2f;
   color: #fff;
+  &:hover {
+    background-color: #222;
+    border-color: #222;
+    color: #fff;
+  }
   &.btn-hero {
     background: #f9bf29;
     border: #f9bf29;
@@ -39,6 +44,22 @@ a {
       border-color: #fff;
     }
   }
+  &.btn-primary {
+    background: #3b5d50;
+    border: #3b5d50;
+    color: #ffffff;
+    &:hover {
+      background: #314d43;
+      border-color: #314d43;
+    }
+  }
+}
+
+.section-title {
+  color: #2f2f2f;
+  font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 30px;
 }
 
 .custom-navbar {
@@ -159,6 +180,93 @@ a {
       width: 255px;
       height: 217px;
       background-image: url("./assets/images/dots-light.svg");
+    }
+  }
+}
+
+.products {
+  padding: 1rem 0;
+  @media (min-width: 768px) {
+    padding: 2rem 0;
+  }
+  @media (min-width: 992px) {
+    padding: 4rem 0;
+  }
+  @media (min-width: 1200px) {
+    padding: 7rem 0;
+  }
+
+  .product-item {
+    display: block;
+    padding-bottom: 50px;
+    position: relative;
+    text-align: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0%;
+      border-radius: 10px;
+      z-index: -1;
+      background: #dce5e4;
+      opacity: 1;
+      transition: 0.3s all ease;
+    }
+
+    .product-thumbnail {
+      margin-bottom: 30px;
+      position: relative;
+      top: 0;
+      transition: 0.3s all ease;
+    }
+    .product-title {
+      color: #2f2f2f;
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      color: #2f2f2f;
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .icon-cross {
+      display: inline-block;
+      background: #2f2f2f;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: 0.3s all ease;
+      margin-bottom: -17.5px;
+      opacity: 0;
+      visibility: hidden;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &:hover {
+      .product-thumbnail {
+        top: -25px;
+      }
+      .icon-cross {
+        transform: translate(-50%, 40%);
+        opacity: 1;
+        visibility: visible;
+      }
+      &::before {
+        height: 70%;
+      }
     }
   }
 }
