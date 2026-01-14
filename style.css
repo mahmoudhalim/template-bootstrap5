@@ -15,6 +15,31 @@ a {
   color: #2f2f2f;
   text-decoration: underline;
 }
+.btn {
+  font-weight: 600;
+  padding: 12px 30px;
+  background-color: #2f2f2f;
+  border-color: #2f2f2f;
+  color: #fff;
+  &.btn-hero {
+    background: #f9bf29;
+    border: #f9bf29;
+    color: #2f2f2f;
+    &:hover {
+      background: #f8b810;
+      border-color: #f8b810;
+    }
+  }
+
+  &.btn-outline-hero {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    &:hover {
+      border-color: #fff;
+    }
+  }
+}
 
 .custom-navbar {
   background-color: #3b5d50;
@@ -77,6 +102,63 @@ a {
       &:first-child {
         margin-right: 20px;
       }
+    }
+  }
+}
+
+.hero {
+  background: #3b5d50;
+  padding: 1rem 0;
+  @media (min-width: 768px) {
+    padding: 2rem 0;
+  }
+  @media (min-width: 992px) {
+    padding: 4rem 0;
+  }
+  @media (min-width: 1200px) {
+    padding: 7rem 0;
+  }
+  .hero-text {
+    text-align: center;
+    @media (min-width: 992px) {
+      text-align: left;
+    }
+    h1 {
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 30px;
+      font-size: 30px;
+
+      @media (min-width: 992px) {
+        font-size: 40px;
+      }
+      @media (min-width: 1200px) {
+        font-size: 54px;
+      }
+    }
+    p {
+      text-align: left;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 30px;
+    }
+  }
+  .hero-img {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: -80px;
+      left: 10px;
+      z-index: 2;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -100px;
+      width: 255px;
+      height: 217px;
+      background-image: url("./assets/images/dots-light.svg");
     }
   }
 }
