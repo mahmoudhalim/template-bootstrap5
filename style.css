@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 28px;
+  color: #6a6a6a;
+  font-size: 14px;
+  background-color: #eff2f1;
+}
+
+a {
+  text-decoration: none !important;
+  transition: 0.3s all ease;
+  color: #2f2f2f;
+  text-decoration: underline;
+}
+
+.custom-navbar {
+  background-color: #3b5d50;
+  padding: 20px 0px;
+  .navbar-brand {
+    font-size: 32px;
+    font-weight: 600;
+    span {
+      opacity: 0.4;
+    }
+  }
+  .custom-navbar-nav {
+    @media (min-width: 992px) {
+      li {
+        margin: auto 15px;
+      }
+    }
+
+    li {
+      a {
+        font-weight: 500;
+        color: #ffffff !important;
+        opacity: 0.5;
+        transition: 0.3s all ease;
+        position: relative;
+        &:hover {
+          opacity: 1;
+        }
+
+        &.active {
+          opacity: 1;
+        }
+        @media (min-width: 768px) {
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 8px;
+            right: 8px;
+            background: #f9bf29;
+            height: 5px;
+            width: 0;
+            visibility: visible;
+            transition: all 0.15s ease-out;
+          }
+          &:hover::before {
+            width: calc(100% - 16px);
+          }
+        }
+      }
+
+      a.active::before {
+        width: calc(100% - 16px);
+      }
+    }
+  }
+  .custom-navbar-icons {
+    li {
+      margin: auto 0px;
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+}
